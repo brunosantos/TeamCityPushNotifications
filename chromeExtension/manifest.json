@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Push Notifications team city",
+  //"gcm_sender_id": "1065076768565",
+  "description": "This extension sends push notifications from team city",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  //"web_accessible_resources": ["sw.js"],
+  "permissions": [
+    "activeTab",
+    "gcm",
+    "storage"  //chrome.storage API.??
+  ]
+}
