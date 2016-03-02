@@ -10,12 +10,12 @@
   ],
   "content_security_policy": "script-src 'self' https://cdn.firebase.com https://domtcnotifications.firebaseio.com; object-src 'self'",
   "icons": {
-    "16": "icon_16.png",
-    "32": "icon_32.png",
-    "128": "icon_128.png"
+    "16": "icon_TeamCity.png",
+    "32": "icon_TeamCity.png",
+    "128": "icon_TeamCity.png"
   },
   "browser_action": {
-    "default_icon": "icon_16.png",
+    "default_icon": "icon_TeamCity.png",
     "default_title": "browser action",
     "default_popup": "background.html"
   },

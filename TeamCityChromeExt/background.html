@@ -3,14 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>GCM Playground Receiver</title>
+  <title>TeamCity Build Notification Receiver</title>
 
-  <link rel="stylesheet" href="/mdl/material.min.css">
-  <script src="/mdl/material.min.js"></script>
-
-
-  <!-- <script src="firebase241.js"></script> -->
-  <!-- <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script> -->
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <script src="app.js"></script>
 
@@ -28,39 +22,38 @@
 
   <h4>TeamCity Build Notification Receiver</h4>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="senderId" value="1065076768565"/>
-    <label class="mdl-textfield__label" for="senderId">Sender ID (Project ID)</label>
-    <span class="mdl-textfield__error">Input is not a number!</span>
+  <div>
+    <input type="text" id="senderId" value="1065076768565"/>
+    <label for="senderId">Sender ID (Project ID)</label>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="stringIdentifier" />
-    <label class="mdl-textfield__label" for="stringIdentifier">String Identifier (Optional)</label>
+  <div>
+    <input type="text" id="stringIdentifier" />
+    <label for="stringIdentifier">String Identifier (Optional)</label>
   </div>
 
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-cols">
-      <button id="register" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
+  <div>
+    <div>
+      <button id="register">Register</button>
     </div>
-    <div class="mdl-cell mdl-cell--6-cols">
-      <button id="unregister" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Unregister</button>
+    <div>
+      <button id="unregister">Unregister</button>
     </div>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <textarea class="mdl-textfield__input" type="text" id="appServerStatus" rows="2" cols="65"></textarea>
-    <label class="mdl-textfield__label" for="appServerStatus">App Server Registration Status</label>
+  <div>
+    <label for="appServerStatus">App Server Registration Status</label>
+    <textarea type="text" id="appServerStatus" rows="2" cols="65"></textarea>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
-    <textarea class="mdl-textfield__input" type="text" id="status" rows="4" cols="65"></textarea>
-    <label class="mdl-textfield__label" for="status">GCM Registration Status</label>
+  <div >
+    <label for="status">GCM Registration Status</label>
+    <textarea type="text" id="status" rows="5" cols="65"></textarea>
   </div>
 
-  <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused">
-    <textarea class="mdl-textfield__input" type="text" id="message" rows="5" cols="65"></textarea>
-    <label class="mdl-textfield__label" for="message">Message Received</label>
+  <!-- <div>
+    <textarea  type="text" id="message" rows="5" cols="65"></textarea>
+    <label for="message">Message Received</label>
   </div> -->
 
 </body>

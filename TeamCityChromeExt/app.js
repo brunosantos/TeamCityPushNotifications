@@ -3,8 +3,6 @@ var unregisterClient = "unregister_client";
 
 var registrationToken = '';
 
-// var myFirebaseRef = new Firebase("https://domtcnotifications.firebaseio.com/");
-
 /**
  * Sets the status of the app to the passed text.
  */
@@ -12,14 +10,12 @@ function setStatus(text) {
   document.getElementById('status').value = text;
 }
 
-
 /**
  * Sets the status of the app server.
  */
 function setAppServerStatus(text) {
   document.getElementById('appServerStatus').value = text;
 }
-
 
 /**
  * Handles the case when the client is already registered.
@@ -33,7 +29,6 @@ function handleAlreadyRegistered() {
   });
 }
 
-
 /**
  * Disable the buttons to prevent multiple clicks.
  */
@@ -41,7 +36,6 @@ function disableButtons() {
   document.getElementById('register').disabled = true;
   document.getElementById('unregister').disabled = true;
 }
-
 
 /**
  * Call cb with `true` if the client is registered, false otherwise.
@@ -51,7 +45,6 @@ function isRegistered(cb) {
     cb(result['registered']);
   });
 }
-
 
 /**
  * Returns a message payload sent using GCM.
@@ -65,7 +58,6 @@ function buildMessagePayload(data) {
     data: data
   };
 }
-
 
 /**
  * Register a GCM registration token with the app server.
@@ -90,7 +82,6 @@ function registerWithAppServer(regToken, cb) {
   });
 }
 
-
 /**
  * Unregister a registration token from the app server.
  */
@@ -108,7 +99,6 @@ function unregisterFromAppServer(cb) {
     }
   });
 }
-
 
 /**
  * Calls the GCM API to register this client if not already registered.
@@ -128,7 +118,6 @@ function register() {
   });
 }
 
-
 /**
  * Calls the GCM API to unregister this client.
  */
@@ -137,7 +126,6 @@ function unregister() {
   setStatus('Unregistering...');
   disableButtons();
 }
-
 
 /**
  * Called when GCM server responds to a registration request.
@@ -221,28 +209,13 @@ window.onload = function() {
 
     var options =   {
       type: "basic",
-      title: "Primary Title",
+      title: "chrome.gcm.onMessage",
       message: JSON.stringify(message),
-      iconUrl: "icon.png",
+      iconUrl: "icon_TeamCity.png",
       priority: 2
     };
     var creationCallback = function(){};
     chrome.notifications.create(null, options, creationCallback);
-    // var myFirebaseRef = new Firebase("https://domtcnotifications.firebaseio.com/");
-    // myFirebaseRef.set({
-    //   title: "Hello World!",
-    //   author: "Firebase",
-    //   token: regToken,
-    //   location: {
-    //     city: "San Francisco",
-    //     state: "California",
-    //     zip: 94103
-    //   }
-    // });
-    // self.registration.showNotification(title, {
-    //   'body': 'The Message',
-    //   'icon': 'images/icon.png'
-    // }));
   });
 
   isRegistered(function(registered) {
